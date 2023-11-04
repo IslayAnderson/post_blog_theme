@@ -10,7 +10,7 @@
                             ?>
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                                 <?php
-                                $thumbnail = !empty(get_the_post_thumbnail_url(get_the_ID(),'full'))?"<img src=\"".get_the_post_thumbnail_url(get_the_ID(),'full')."\">": "<img src=\"".get_template_directory_uri() . "/" . explode("/islay-blog_bones/",$thumbail_rand[rand(0, count($thumbail_rand)-1)])[1]."\">";
+                                $thumbnail = !empty(get_the_post_thumbnail_url(get_the_ID(),'full'))?"<img src=\"".get_the_post_thumbnail_url(get_the_ID(),'full')."\">": "<img src=\"".get_template_directory_uri() . "/" . explode("/poster_blog/",$thumbail_rand[rand(0, count($thumbail_rand)-1)])[1]."\">";
                                     if($counter%2):
                                 ?>
                                     <div class=" project headline"  id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article">
