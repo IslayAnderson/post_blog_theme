@@ -297,5 +297,9 @@ function bones_excerpt_more($more) {
 }
 
 
+include_once(__DIR__."/TruncateHTML.php");
+include_once(__DIR__."/DOMWordsIterator.php");
+include_once(__DIR__."/DOMLettersItertor.php");
+
 
 ?>

@@ -25,7 +25,7 @@
                                             ); ?>
                                         </p>
 
-                                        <?php the_content(); ?>
+                                        <?php echo TruncateHTML::truncateWords(get_the_content(), '150', '...'); ?>
                                     </div>
                                     <figure class="project proof">
                                         <?=$thumbnail ?>
