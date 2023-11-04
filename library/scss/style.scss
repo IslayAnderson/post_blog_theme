@@ -1,0 +1,131 @@
+$breakpoint-tablet: 900px;
+$white: #fefff5;
+$black: #4d4f4a;
+html{
+  background-color: $white;
+}
+body{
+  color: $black;
+}
+header {
+  display: flex;
+  justify-content: center;
+  border-bottom: solid $black 2px;
+}
+figure{
+  margin:0;
+}
+article section.entry-content {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+pre::-webkit-scrollbar {
+  background-color: #c6ccab;
+  height: 1;
+  border-radius: 20px;
+}
+pre::-webkit-scrollbar-thumb {
+  background: #54564a;
+  border-radius: 20px;
+}
+pre {
+  margin:1rem auto;
+  width:100%;
+  max-width:600px;
+  max-height: 585px;
+  overflow: scroll;
+  background: #E7F6B5;
+  padding: 10px;
+  font-family: 'Calibri';
+  letter-spacing: .5px;
+  font-size: 13pt;
+  color: #54564a;
+}
+.entry-meta {
+  margin: 1rem 0.5rem;
+}
+.title {
+  text-align: center;
+  text-decoration: underline;
+  > span {
+    display: block;
+    text-decoration: unset;
+  }
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.project {
+  min-width: calc(50vw - 6rem);
+  width: calc(50vw - 6rem);
+  box-sizing: content-box;
+  padding: 2rem;
+  .section_headline:visited {
+    color: $black;
+  }
+  .section_headline {
+    color: $black;
+  }
+  &.headline {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    .tag_cloud {
+      max-height: 36vw;
+      width: auto;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      span {
+        display: inline-block;
+        margin: 0 0.25rem;
+        font-size: 2rem;
+      }
+    }
+  }
+  &.proof {
+    img {
+      height: 75vh;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  &:nth-child(odd){
+    border-right: solid 2px;
+  }
+}
+.h_line {
+  height: 2px;
+  width: 100%;
+  display: inline-block;
+  background: $black;
+  margin: 2rem 0;
+}
+
+
+
+
+
+
+
+@media (max-width: $breakpoint-tablet) {
+  .project{
+    width:100%;
+    &.headline{
+      .tag_cloud {
+        max-height: 110vw;
+        max-width: 55vw;
+      }
+    }
+    &:nth-child(odd){
+      border-right: unset;
+    }
+  }
+}

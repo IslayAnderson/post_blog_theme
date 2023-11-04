@@ -1,0 +1,17 @@
+/******************************************************************
+Theme Name: Islay Blog
+Theme URI: https://islyanderson.co.uk
+Description: blog ting init
+Author: Islay Anderson
+Author URI: https://islayanderson.co.uk
+Version: 1.7
+Tags: fluid-layout, responsive-layout, accessibility-ready, translation-ready, microformats, rtl-language-support
+
+License: WTFPL
+License URI: http://sam.zoy.org/wtfpl/
+
+*/
+.sticky {}          /* DO NOT EDIT THIS */
+
+.gallery-caption {} /* THESE ARE USELESS */
+.bypostauthor {}    /* THEY ARE ONLY TO KEEP THEME CHECK HAPPY */
