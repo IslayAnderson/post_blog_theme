@@ -68,7 +68,6 @@ pre {
 
 .project {
   min-width: calc(50vw - 6rem);
-  max-height: calc(50vw - 6rem);
   width: calc(50vw - 6rem);
   box-sizing: content-box;
   padding: 2rem;
@@ -86,6 +85,7 @@ pre {
   justify-content: flex-start;
   flex-direction: column;
   overflow:hidden;
+  max-height: calc(50vw - 6rem);
 }
 .project.headline .tag_cloud {
   max-height: 36vw;
@@ -121,6 +121,9 @@ pre {
 @media (max-width: 900px) {
   .project {
     width: 100%;
+  }
+  .project.headline{
+    max-height: calc(50vh - 6rem);
   }
   .project.headline .tag_cloud {
     max-height: 110vw;
