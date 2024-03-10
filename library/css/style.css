@@ -132,7 +132,7 @@ pre {
 .wp-block-gallery.has-nested-images.columns-default figure.wp-block-image:not(#individual-image):nth-child(1), .wp-block-gallery.has-nested-images.columns-default figure.wp-block-image:not(#individual-image):nth-child(7n) {
   width: calc(66% - var(--wp--style--unstable-gallery-gap, 16px)* .66667);
 }
-.wp-block-gallery.has-nested-images figure.wp-block-image{
+.wp-block-gallery.has-nested-images.is-cropped figure.wp-block-image:not(#individual-image) a, .wp-block-gallery.has-nested-images.is-cropped figure.wp-block-image:not(#individual-image) img{
   border-radius: 1rem;
 }
 
