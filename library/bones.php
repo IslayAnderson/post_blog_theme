@@ -296,6 +296,13 @@ function bones_excerpt_more($more) {
 	return '...  <a class="excerpt-read-more" href="'. get_permalink( $post->ID ) . '" title="'. __( 'Read ', 'bonestheme' ) . esc_attr( get_the_title( $post->ID ) ).'">'. __( 'Read more &raquo;', 'bonestheme' ) .'</a>';
 }
 
+// Change the default excerpt length to 20 words.
+function wpexplorer_excerpt_length( $length ) {
+    $length = 150;
+    return $length;
+}
+add_filter( 'excerpt_length', 'wpexplorer_excerpt_length', PHP_INT_MAX );
+
 
 include_once(__DIR__."/TruncateHTML.php");
 include_once(__DIR__."/DOMWordsIterator.php");
