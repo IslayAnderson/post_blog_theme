@@ -125,6 +125,9 @@ pre {
   .project.proof{
     max-height: 50vh;
   }
+  .project.proof img{
+    height: 60vh;
+  }
   .project.headline{
     max-height: 100vh;
   }
