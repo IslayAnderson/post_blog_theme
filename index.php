@@ -25,7 +25,7 @@
                                             ); ?>
                                         </p>
 
-                                        <?php echo TruncateHTML::truncateWords(get_the_excerpt(), '150', '...'); ?>
+                                        <?php echo TruncateHTML::truncateWords(get_the_content(), '150', '...'); ?>
                                     </div>
                                     <figure class="project proof">
                                         <?=$thumbnail ?>
@@ -46,7 +46,7 @@
                                             ); ?>
                                         </p>
 
-                                        <?php echo TruncateHTML::truncateWords(get_the_excerpt(), '150', '...'); ?>
+                                        <?php echo TruncateHTML::truncateWords(get_the_content(), '150', '...'); ?>
                                     </div>
                                 <?php endif;?>
 							<?php $counter++; endwhile; ?>
