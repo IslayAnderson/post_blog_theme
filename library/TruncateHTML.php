@@ -89,7 +89,7 @@ class TruncateHTML {
             }
         }
 
-        return preg_replace('~<(?:!DOCTYPE|/?(?:html|head|body))[^>]*>\s*~i', '', $dom->saveHTML());
+        return preg_replace('~<(?:!DOCTYPE|/?(?:html|head|body|figure))[^>]*>\s*~i', '', $dom->saveHTML());
     }
 
     private static function removeProceedingNodes(DOMNode $domNode, DOMNode $topNode) {
