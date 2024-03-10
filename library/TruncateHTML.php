@@ -59,7 +59,7 @@ class TruncateHTML {
             }
         }
 
-        return preg_replace('~<(?:!DOCTYPE|/?(?:html|head|body))[^>]*>\s*~i', '', $dom->saveHTML());
+        return preg_replace('~<(?:!DOCTYPE|/?(?:html|head|body|figure))[^>]*>\s*~i', '', $dom->saveHTML());
     }
 
     public static function truncateWords($html, $limit, $ellipsis = '...') {
