@@ -135,7 +135,7 @@ pre {
 .wp-block-gallery.has-nested-images.is-cropped figure.wp-block-image:not(#individual-image) a, .wp-block-gallery.has-nested-images.is-cropped figure.wp-block-image:not(#individual-image) img{
   border-radius: 1rem;
 }
-.project .wp-block-gallery.wp-block-gallery-1 {
+.project .wp-block-gallery {
   display:flex;
   flex-wrap: wrap;
 }
