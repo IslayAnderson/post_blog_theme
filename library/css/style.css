@@ -68,6 +68,7 @@ pre {
 
 .project {
   min-width: calc(50vw - 6rem);
+  max-height: calc(50vw - 6rem);
   width: calc(50vw - 6rem);
   box-sizing: content-box;
   padding: 2rem;
@@ -84,6 +85,7 @@ pre {
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
+  overflow:hidden;
 }
 .project.headline .tag_cloud {
   max-height: 36vw;
