@@ -132,7 +132,9 @@ pre {
 
 @media (max-width: 900px) {
   .project {
+    box-sizing: border-box;
     width: 100%;
+    padding: 0.5rem;
   }
   .project.headline .tag_cloud {
     max-height: 110vw;
@@ -140,5 +142,8 @@ pre {
   }
   .project:nth-child(odd) {
     border-right: unset;
+  }
+  .project .project.proof img {
+    height: auto;
   }
 }/*# sourceMappingURL=style.css.map */

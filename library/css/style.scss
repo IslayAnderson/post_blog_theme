@@ -127,7 +127,9 @@ pre {
 
 @media (max-width: $breakpoint-tablet) {
   .project{
+    box-sizing: border-box;
     width:100%;
+    padding:0.5rem;
     &.headline{
       .tag_cloud {
         max-height: 110vw;
@@ -137,6 +139,11 @@ pre {
     &:nth-child(odd){
       border-right: unset;
     }
+    .project.proof{
+      img{
+        height: auto;
+      }
+    } 
   }
 }
 
