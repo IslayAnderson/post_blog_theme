@@ -62,8 +62,9 @@ pre {
 
 .row {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
+  align-content: center;
 }
 
 .project {
@@ -84,8 +85,6 @@ pre {
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
-  overflow:hidden;
-  max-height: calc(50vw - 6rem);
 }
 .project.headline .tag_cloud {
   max-height: 36vw;
@@ -104,10 +103,15 @@ pre {
 .project.proof img {
   height: 75vh;
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
-.project:nth-child(odd) {
-  border-right: solid 2px;
+.project .wp-block-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
+  row-gap: 8px;
 }
 
 .h_line {
@@ -118,18 +122,17 @@ pre {
   margin: 2rem 0;
 }
 
+.wp-block-gallery.has-nested-images.columns-default figure.wp-block-image:not(#individual-image):nth-child(1), .wp-block-gallery.has-nested-images.columns-default figure.wp-block-image:not(#individual-image):nth-child(7n) {
+  width: calc(66% - var(--wp--style--unstable-gallery-gap, 16px) * 0.66667);
+}
+
+.wp-block-gallery.has-nested-images.is-cropped figure.wp-block-image:not(#individual-image) a, .wp-block-gallery.has-nested-images.is-cropped figure.wp-block-image:not(#individual-image) img {
+  border-radius: 1rem;
+}
+
 @media (max-width: 900px) {
   .project {
     width: 100%;
-  }
-  .project.proof{
-    max-height: 50vh;
-  }
-  .project.proof img{
-    height: 60vh;
-  }
-  .project.headline{
-    max-height: 100vh;
   }
   .project.headline .tag_cloud {
     max-height: 110vw;
@@ -138,19 +141,4 @@ pre {
   .project:nth-child(odd) {
     border-right: unset;
   }
-}
-
-.wp-block-gallery.has-nested-images.columns-default figure.wp-block-image:not(#individual-image):nth-child(1), .wp-block-gallery.has-nested-images.columns-default figure.wp-block-image:not(#individual-image):nth-child(7n) {
-  width: calc(66% - var(--wp--style--unstable-gallery-gap, 16px)* .66667);
-}
-.wp-block-gallery.has-nested-images.is-cropped figure.wp-block-image:not(#individual-image) a, .wp-block-gallery.has-nested-images.is-cropped figure.wp-block-image:not(#individual-image) img{
-  border-radius: 1rem;
-}
-.project .wp-block-gallery {
-  display:flex;
-  flex-wrap: wrap;
-  column-gap: 8px;
-  row-gap: 8px;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
