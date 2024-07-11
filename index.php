@@ -11,7 +11,7 @@
 
 		<div class="govuk-grid-row">
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-				<div class="govuk-grid-column-one-thirds">
+				<div class="govuk-grid-column-full-width">
 					<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article">
 						
 						<h1 class="h2 entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>

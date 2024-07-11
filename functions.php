@@ -458,4 +458,20 @@ function gdstheme_error($message){
   <?php
 }
 
+function gdstheme_body_class($option){
+	switch($option){
+		case 'string':
+			$body_class_string = '';
+			foreach(get_body_class() as $class){
+				$body_class_string .= $class . ' ';
+			}
+			//return substr($body_class_string, -1, 1); //i'm stupid and cant be bothered figuring out why this broken 
+			return $body_class_string;
+			break;	
+		default:
+			return get_body_class();
+			break;
+	}
+}
+
 /* DON'T DELETE THIS CLOSING TAG */ ?>

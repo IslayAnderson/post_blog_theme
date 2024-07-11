@@ -48,4 +48,4 @@ gulp.task('gdsprecompiledjs')
 
 //build
 
-exports.build = series(buildsass, unusedcss, minifycss, gdsprecompiledAssets, gdsprecompiledjs);
+exports.build = series(buildsass, /*unusedcss,*/ minifycss, gdsprecompiledAssets, gdsprecompiledjs);

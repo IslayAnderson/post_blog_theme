@@ -31,7 +31,7 @@
 
 	</head>
 
-	<body class="govuk-template__body js-enabled govuk-frontend-supported <?= get_body_class(); ?>" itemscope itemtype="http://schema.org/WebPage">
+	<body class="govuk-template__body js-enabled govuk-frontend-supported <?= gdstheme_body_class('string') ?>" itemscope itemtype="http://schema.org/WebPage">
 		
 	<header class="govuk-header" data-module="govuk-header">
 		<div class="govuk-header__container govuk-width-container">
