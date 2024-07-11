@@ -207,19 +207,32 @@ function gdstheme_page_navi() {
   $bignum = 999999999;
   if ( $wp_query->max_num_pages <= 1 )
     return;
-  echo '<nav class="pagination">';
-  echo paginate_links( array(
-    'base'         => str_replace( $bignum, '%#%', esc_url( get_pagenum_link($bignum) ) ),
-    'format'       => '',
-    'current'      => max( 1, get_query_var('paged') ),
-    'total'        => $wp_query->max_num_pages,
-    'prev_text'    => '&larr;',
-    'next_text'    => '&rarr;',
-    'type'         => 'list',
-    'end_size'     => 3,
-    'mid_size'     => 3
-  ) );
-  echo '</nav>';
+	$pages = paginate_links( array(
+		'base'         => str_replace( $bignum, '%#%', esc_url( get_pagenum_link($bignum) ) ),
+		'format'       => '',
+		'current'      => max( 1, get_query_var('paged') ),
+		'total'        => $wp_query->max_num_pages,
+		'prev_text'    => '<svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13"><path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path></svg> <span class="govuk-pagination__link-title">Previous<span class="govuk-visually-hidden"> page</span></span>',
+		'next_text'    => '<span class="govuk-pagination__link-title">Next<span class="govuk-visually-hidden"> page</span><svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13"><path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path></svg>',
+		'type'         => 'array',
+		'end_size'     => 3,
+		'mid_size'     => 3
+	  ) );
+	  ?>
+	<nav class="govuk-pagination">
+		<ul class="govuk-pagination__list">
+		<?php
+		foreach($pages as $key=>$page){
+			?>
+			<li class="govuk-pagination__item">
+				<?=$page?>
+			</li>
+			<?php
+		}
+		?>
+		</ul>
+	</nav>
+  <?php
 } /* end page navi */
 
 /*********************
