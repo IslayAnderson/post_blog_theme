@@ -1,54 +1,42 @@
 <?php get_header(); ?>
+<div class="govuk-width-container">
+<a href="/" class="govuk-back-link">Back</a>
+	<main class="govuk-main-wrapper ">
+		<div class="govuk-grid-row">
+			<div class="govuk-grid-column-full-width">
+				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+				
+				<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article">
+					
+					<h1 class="govuk-heading-l"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
+					<div class="govuk-inset-text">
+					<?php printf( __
+							( 'Posted', 'gdstheme' ).' %1$s %2$s',
+							'<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
+							'<span class="by">'.__( 'by', 'gdstheme').'</span> <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person">' . get_the_author_link( get_the_author_meta( 'ID' ) ) . '</span>'
+						); ?>	
+					</div>
+					<?php has_post_thumbnail()?the_post_thumbnail('large'):''; ?>
+					<section>
+						<?php the_content(); ?>
+					</section>
 
-			<div id="content">
+				</article>
 
-				<div id="inner-content" class="wrap cf">
+				<?php endwhile; ?>
 
-					<main id="main" class="m-all t-2of3 d-5of7 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+					<?php gdstheme_page_navi(); ?>
 
-						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+				<?php else : ?>
 
-							<?php
-								/*
-								 * Ah, post formats. Nature's greatest mystery (aside from the sloth).
-								 *
-								 * So this function will bring in the needed template file depending on what the post
-								 * format is. The different post formats are located in the post-formats folder.
-								 *
-								 *
-								 * REMEMBER TO ALWAYS HAVE A DEFAULT ONE NAMED "format.php" FOR POSTS THAT AREN'T
-								 * A SPECIFIC POST FORMAT.
-								 *
-								 * If you want to remove post formats, just delete the post-formats folder and
-								 * replace the function below with the contents of the "format.php" file.
-								*/
-								get_template_part( 'post-formats/format', get_post_format() );
-							?>
+				<article id="post-not-found" class="govuk-grid-column-full">
+					<?php gdstheme_error('Post not found'); ?>
+				</article>
 
-						<?php endwhile; ?>
-
-						<?php else : ?>
-
-							<article id="post-not-found" class="hentry cf">
-									<header class="article-header">
-										<h1><?php _e( 'Oops, Post Not Found!', 'gdstheme' ); ?></h1>
-									</header>
-									<section class="entry-content">
-										<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'gdstheme' ); ?></p>
-									</section>
-									<footer class="article-footer">
-											<p><?php _e( 'This is the error message in the single.php template.', 'gdstheme' ); ?></p>
-									</footer>
-							</article>
-
-						<?php endif; ?>
-
-					</main>
-
-					<?php get_sidebar(); ?>
-
-				</div>
-
+				<?php endif; ?>
 			</div>
+		</div>
+	</main>
+</div>
 
 <?php get_footer(); ?>

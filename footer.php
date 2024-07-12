@@ -2,6 +2,7 @@
 				<div class="govuk-width-container">
 					<div class="govuk-footer__meta">
 						<div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+							<?php get_sidebar(); ?>
 							<h2 class="govuk-visually-hidden"><!-- widget --></h2>
 							<ul class="govuk-footer__inline-list">
 								<?php wp_nav_menu(array(

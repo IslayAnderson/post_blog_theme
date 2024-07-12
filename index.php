@@ -21,7 +21,7 @@
 								'<span class="by">'.__( 'by', 'gdstheme').'</span> <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person">' . get_the_author_link( get_the_author_meta( 'ID' ) ) . '</span>'
 							); ?>	
 						</div>
-						<?php has_post_thumbnail()?'<figure>'.the_post_thumbnail('large').'</figure>':''; ?>
+						<?php has_post_thumbnail()?the_post_thumbnail('large'):''; ?>
 						<section>
 							<?php the_excerpt(); ?>
 						</section>
@@ -43,7 +43,5 @@
 		
 	</main>
 </div>
-
-<?php // get_sidebar(); ?>
 
 <?php get_footer(); ?>
