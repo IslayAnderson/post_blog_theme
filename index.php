@@ -4,7 +4,7 @@
 	<main class="govuk-main-wrapper">
 		<div class="govuk-grid-row">
 			<div class="govuk-grid-column-two-thirds">
-				<h1 class="govuk-heading-xl"><?php the_title(); ?></h1>
+				<h1 class="govuk-heading-xl"><?= get_bloginfo(); ?></h1>
 			</div>
 		</div>
 
@@ -13,20 +13,17 @@
 				<div class="govuk-grid-column-full-width">
 					<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article">
 						
-						<h1 class="h2 entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-						<?php /*
-						<p class="byline entry-meta vcard">
-							<?php printf( __
+						<h2 class="govuk-heading-m"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+						<div class="govuk-inset-text">
+						<?php printf( __
 								( 'Posted', 'gdstheme' ).' %1$s %2$s',
 								'<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
 								'<span class="by">'.__( 'by', 'gdstheme').'</span> <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person">' . get_the_author_link( get_the_author_meta( 'ID' ) ) . '</span>'
-							); ?>
-						</p>
-						*/
-						?>
-
+							); ?>	
+						</div>
+						<?php has_post_thumbnail()?'<figure>'.the_post_thumbnail('large').'</figure>':''; ?>
 						<section>
-							<?php the_content(); ?>
+							<?php the_excerpt(); ?>
 						</section>
 
 					</article>
