@@ -2,11 +2,13 @@
 
 <div class="govuk-width-container">
 	<main class="govuk-main-wrapper">
+		<?php if(is_page()): ?>
 		<div class="govuk-grid-row">
 			<div class="govuk-grid-column-two-thirds">
 				<h1 class="govuk-heading-xl"><?= get_bloginfo(); ?></h1>
 			</div>
 		</div>
+		<?php endif; ?>
 
 		<div class="govuk-grid-row">
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>

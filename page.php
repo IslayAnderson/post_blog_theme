@@ -1,6 +1,8 @@
 <?php get_header(); ?>
 <div class="govuk-width-container">
-<a href="/" class="govuk-back-link">Back</a>
+	<?php if(!is_front_page()): ?>
+	<a href="/" class="govuk-back-link">Back</a>
+	<?php endif; ?>
 	<main class="govuk-main-wrapper ">
 		<div class="govuk-grid-row">
 			<div class="govuk-grid-column-full-width">
