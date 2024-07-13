@@ -22,7 +22,7 @@ if ( post_password_required() ) {
           'style'             => 'div',
           'short_ping'        => true,
           'avatar_size'       => 40,
-          'callback'          => 'bones_comments',
+          'callback'          => 'gdstheme_comments',
           'type'              => 'all',
           'reply_text'        => __('Reply', 'gdstheme'),
           'page'              => '',

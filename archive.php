@@ -2,7 +2,7 @@
 
 <div class="govuk-width-container">
 	<main class="govuk-main-wrapper">
-		<div class="govuk-grid-row">
+		<div class="govuk-grid-row govuk-width-container">
 			<div class="govuk-grid-column-two-thirds">
 				<?php
 				the_archive_title( '<h1 class="govuk-heading-xl page-title">', '</h1>' );

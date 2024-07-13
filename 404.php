@@ -4,7 +4,7 @@
 	<a href="/" class="govuk-back-link">Back</a>
 	<?php endif; ?>
 	<main class="govuk-main-wrapper ">
-		<div class="govuk-grid-row">
+		<div class="govuk-grid-row govuk-width-container">
 			<div class="govuk-grid-column-full-width">
 				<div class="govuk-error-summary" data-module="govuk-error-summary">
 					<div role="alert">

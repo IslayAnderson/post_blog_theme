@@ -4,7 +4,7 @@
 	<a href="/" class="govuk-back-link">Back</a>
 	<?php endif; ?>
 	<main class="govuk-main-wrapper ">
-		<div class="govuk-grid-row">
+		<div class="govuk-grid-row govuk-width-container">
 			<div class="govuk-grid-column-full-width">
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 				
