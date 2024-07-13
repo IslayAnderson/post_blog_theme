@@ -200,8 +200,7 @@ function bones_related_posts() {
 PAGE NAVI
 *********************/
 
-// Numeric Page Navi (built into the theme by default)
-//TODO: gdsify this
+// Pagination
 function gdstheme_page_navi() {
   global $wp_query;
   $bignum = 999999999;

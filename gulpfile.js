@@ -16,7 +16,7 @@ gulp.task('buildsass')
 function unusedcss() {
   return gulp.src('assets/css/*.css')
     .pipe(purgecss({
-      content: ['*.html']
+      content: ['*.php']
     }))
     .pipe(gulp.dest('assets/css/'))
 };
@@ -48,4 +48,4 @@ gulp.task('gdsprecompiledjs')
 
 //build
 
-exports.build = series(buildsass, /*unusedcss,*/ minifycss, gdsprecompiledAssets, gdsprecompiledjs);
+exports.build = series(buildsass, unusedcss, minifycss, gdsprecompiledAssets, gdsprecompiledjs);

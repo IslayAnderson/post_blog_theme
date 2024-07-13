@@ -44,23 +44,45 @@
 					<button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" hidden>
 					Menu
 					</button>
-					<ul id="navigation" class="govuk-header__navigation-list">
 						<?php 
+						function gdstheme_menu_classes($classes, $item, $args) {
+							if($args->theme_location == 'main-nav') {
+								$classes[] = 'govuk-header__navigation-item';
+							}
+							return $classes;
+						}
+						add_filter('nav_menu_css_class','gdstheme_menu_classes',1,3);
+
+						function gdstheme_add_link_atts($atts) {
+							$atts['class'] = "govuk-header__link";
+							return $atts;
+						}
+						add_filter( 'nav_menu_link_attributes', 'gdstheme_add_link_atts');
+
+						function gdstheme_special_nav_class($classes, $item){
+							if( in_array('current-menu-item', $classes) ){
+								$classes[] = 'govuk-header__navigation-item--active ';
+							}
+							return $classes;
+						}
+						add_filter('gdstheme_special_nav_class' , 'special_nav_class' , 10 , 2);
 						wp_nav_menu(
 							array(
 								'container' => false,                           		// remove nav container
-								'container_class' => 'govuk-header__navigation-item',   // class of container (should you choose to use it)
+								//'items_wrap' => '<ul id="%1$s" class="%2$s govuk-header__navigation-list">%3$s</ul>',
+								'container_class' => '',   // class of container (should you choose to use it)
 								'menu' => __( 'The Main Menu', 'gdstheme' ),  			// nav name
-								'menu_class' => 'govuk-header__link',               	// adding custom nav class
+								'menu_class' => 'govuk-header__navigation-list',               	// adding custom nav class
 								'theme_location' => 'main-nav',                 		// where it's located in the theme
 								'before' => '',                                 		//	 before the menu
 								'after' => '',                                 			// after the menu
 								'link_before' => '',                            		// before each link
 								'link_after' => '',                             		// after each link
 								'depth' => 0,                                   		// limit the depth of the nav
-								'fallback_cb' => ''                             		// fallback function (if there is one)
+								'fallback_cb' => '',                             		// fallback function (if there is one)
 							)
-						); 
+						);
+						
 						?>
 					</ul>
 				</nav>
