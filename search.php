@@ -22,7 +22,11 @@
 							'<span class="by">'.__( 'by', 'gdstheme').'</span> <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person">' . get_the_author_link( get_the_author_meta( 'ID' ) ) . '</span>'
 						); ?>	
 					</div>
-					<?php has_post_thumbnail()?the_post_thumbnail('large'):''; ?>
+					<?php if(has_post_thumbnail()):?>
+						<div class="featured">
+							<?php the_post_thumbnail('large'); ?>
+						</div>
+					<?php endif; ?>
 					<section>
 						<?php the_excerpt(); ?>
 					</section>
