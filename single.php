@@ -56,10 +56,9 @@
 					</h3>
 					<form action="http://blogislayandersoncouk.local/wp-comments-post.php" method="post" id="commentform" class="comment-form">
 						<div class="govuk-form-group">
-							<label class="govuk-label" for="more-detail">Required fields are marked <span class="required">*</span></label>
 							<label class="govuk-label" for="more-detail">Comment</label>
 							<textarea class="govuk-textarea" id="comment" name="comment" rows="5" aria-describedby="more-detail-hint"></textarea>
-						</div>
+						</div> 
 						<div class="govuk-form-group">
 							<label class="govuk-label" for="full-name">User name</label>
 							<input class="govuk-input" id="author" name="author" type="text" spellcheck="false" autocomplete="name">
