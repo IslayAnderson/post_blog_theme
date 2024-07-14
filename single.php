@@ -72,7 +72,7 @@
 							<input class="govuk-input" id="url" name="url" type="text" spellcheck="false" autocomplete="url">
 						</div>
 						<input name="submit" type="submit" id="submit" class="govuk-button" data-module="govuk-button" value="Post Comment">
-						<input type="hidden" name="comment_post_ID" value="151" id="comment_post_ID">
+						<input type="hidden" name="comment_post_ID" value="<?= get_the_ID() ?>" id="comment_post_ID">
 						<input type="hidden" name="comment_parent" id="comment_parent" value="0">
 						</p>
 					</form>	
