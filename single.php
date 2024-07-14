@@ -54,7 +54,7 @@
 							<a rel="nofollow" id="cancel-comment-reply-link" href="/socialchaff-an-exercise-in-obfuscation-by-hiding-in-plain-sight/#respond" style="display:none;">Cancel reply</a>
 						</small>
 					</h3>
-					<form action="http://blogislayandersoncouk.local/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+					<form action="/wp-comments-post.php" method="post" id="commentform" class="comment-form">
 						<div class="govuk-form-group">
 							<label class="govuk-label" for="more-detail">Comment</label>
 							<textarea class="govuk-textarea" id="comment" name="comment" rows="5" aria-describedby="more-detail-hint"></textarea>
