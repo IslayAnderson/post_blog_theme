@@ -1,50 +1,53 @@
+<h2 class="govuk-heading-m">Comments:</h2>
 <?php
-/*
-The comments page for Bones
-*/
+$args = array(
+  'post_id' => get_the_ID(),
+  'orderby' => array(
+    'comment_date' => 'ASC'
+  ),
+);
 
-// don't load it if you can't comment
-if ( post_password_required() ) {
-  return;
+// The comment Query
+$comments_query = new WP_Comment_Query();
+$comments       = $comments_query->query( $args );
+
+// Comment Loop
+if ( $comments ) {
+  foreach ( $comments as $comment ) {
+    gdstheme_comments($comment);
+  }
+} else {
+  gdstheme_error('No comments found.');
 }
 
 ?>
 
-<?php // You can start editing here. ?>
-
-  <?php if ( have_comments() ) : ?>
-
-    <h3 id="comments-title" class="h2"><?php comments_number( __( '<span>No</span> Comments', 'gdstheme' ), __( '<span>One</span> Comment', 'gdstheme' ), __( '<span>%</span> Comments', 'gdstheme' ) );?></h3>
-
-    <section class="commentlist">
-      <?php
-        wp_list_comments( array(
-          'style'             => 'div',
-          'short_ping'        => true,
-          'avatar_size'       => 40,
-          'callback'          => 'gdstheme_comments',
-          'type'              => 'all',
-          'reply_text'        => __('Reply', 'gdstheme'),
-          'page'              => '',
-          'per_page'          => '',
-          'reverse_top_level' => null,
-          'reverse_children'  => ''
-        ) );
-      ?>
-    </section>
-
-    <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
-    	<nav class="navigation comment-navigation" role="navigation">
-      	<div class="comment-nav-prev"><?php previous_comments_link( __( '&larr; Previous Comments', 'gdstheme' ) ); ?></div>
-      	<div class="comment-nav-next"><?php next_comments_link( __( 'More Comments &rarr;', 'gdstheme' ) ); ?></div>
-    	</nav>
-    <?php endif; ?>
-
-    <?php if ( ! comments_open() ) : ?>
-    	<p class="no-comments"><?php _e( 'Comments are closed.' , 'gdstheme' ); ?></p>
-    <?php endif; ?>
-
-  <?php endif; ?>
-
-  <?php comment_form(); ?>
-
+<div id="respond" class="comment-respond">
+  <h3 id="reply-title" class="comment-reply-title">Leave a Reply 
+    <small>
+      <a rel="nofollow" id="cancel-comment-reply-link" href="/socialchaff-an-exercise-in-obfuscation-by-hiding-in-plain-sight/#respond" style="display:none;">Cancel reply</a>
+    </small>
+  </h3>
+  <form action="/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="more-detail">Comment</label>
+      <textarea class="govuk-textarea" id="comment" name="comment" rows="5" aria-describedby="more-detail-hint"></textarea>
+    </div> 
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="full-name">User name</label>
+      <input class="govuk-input" id="author" name="author" type="text" spellcheck="false" autocomplete="name">
+    </div>
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="email">Email address</label>
+      <input class="govuk-input" id="email" name="email" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email">
+    </div>
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="email">Website</label>
+      <input class="govuk-input" id="url" name="url" type="text" spellcheck="false" autocomplete="url">
+    </div>
+    <input name="submit" type="submit" id="submit" class="govuk-button" data-module="govuk-button" value="Post Comment">
+    <input type="hidden" name="comment_post_ID" value="<?= get_the_ID() ?>" id="comment_post_ID">
+    <input type="hidden" name="comment_parent" id="comment_parent" value="0">
+    </p>
+  </form>	
+</div>
