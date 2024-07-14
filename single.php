@@ -28,9 +28,11 @@
 				</article>
 				<h2 class="govuk-heading-m">Comments:</h2>
 				<?php
-				// Get only the approved comments
 				$args = array(
 					'post_id' => get_the_ID(),
+					'orderby' => array(
+						'comment_date' => 'ASC'
+					),
 				);
 
 				// The comment Query
